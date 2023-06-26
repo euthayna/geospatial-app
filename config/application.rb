@@ -14,15 +14,18 @@ require "action_view/railtie"
 # require "action_cable/engine"
 require "rails/test_unit/railtie"
 
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+if %w[development test].include? ENV['RAILS_ENV']
+  Dotenv::Railtie.load
+end
 
 module GeospatialApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -33,5 +36,6 @@ module GeospatialApp
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.active_record.schema_format = :sql
   end
 end
