@@ -34,6 +34,11 @@
   <div class="text-xs whitespace-nowrap px-6">
     Crew On Site: <%= crew_on_site_status(@ticket) %>
   </div>
+  <div id="map" style="height: 400px; width: 100%;" data-wkt-polygon="<%= @ticket.digsite_info_well_known_text %>"></div>
 </div>
 
 <%= link_to 'Back', tickets_path, class: "flex text-xl justify-end mt-4" %>
+
+<script>
+  window.GOOGLE_API_KEY = '<%= ENV['GOOGLE_API_KEY'] %>';
+</script>
