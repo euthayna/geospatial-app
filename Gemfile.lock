@@ -76,6 +76,11 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    diff-lcs (1.5.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -90,6 +95,18 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -152,6 +169,23 @@ GEM
     rake (13.0.6)
     reline (0.3.5)
       io-console (~> 0.5)
+    rspec-core (3.12.1)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.4)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-rails (6.0.1)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.11)
+      rspec-expectations (~> 3.11)
+      rspec-mocks (~> 3.11)
+      rspec-support (~> 3.11)
+    rspec-support (3.12.0)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -160,6 +194,8 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.0.29-arm64-darwin)
       railties (>= 6.0.0)
     thor (1.2.2)
     timeout (0.4.0)
@@ -185,13 +221,17 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  dotenv-rails
   importmap-rails
   jbuilder
+  kaminari
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.5)
+  rspec-rails (~> 6.0.0)
   sprockets-rails
   stimulus-rails
+  tailwindcss-rails (~> 2.0)
   turbo-rails
   tzinfo-data
   web-console

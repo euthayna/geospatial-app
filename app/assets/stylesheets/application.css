@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+ .row-hover td {
+  cursor: pointer;
+  background-color: #F5F5F5;
+}
+
