@@ -1,0 +1,33 @@
+<div>
+  <div class="text-4xl font-semibold mb-4">Tickets</div>
+
+  <table class="min-w-full divide-y divide-gray-200">
+    <thead class="bg-gray-50">
+      <tr>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Request Number</th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Sequence Number</th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Request Type</th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Request Action</th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Due Date</th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Primary Service Area Code</th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Additional Service Area Code</th>
+      </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+      <% @tickets.each do |ticket| %>
+        <tr data-url="<%= ticket_path(ticket) %>">
+          <td class="px-6 py-4"><%= ticket.request_number %></td>
+          <td class="px-6 py-4"><%= ticket.sequence_number %></td>
+          <td class="px-6 py-4"><%= ticket.request_type %></td>
+          <td class="px-6 py-4"><%= ticket.request_action %></td>
+          <td class="px-6 py-4"><%= ticket.response_due_date_time %></td>
+          <td class="px-6 py-4"><%= ticket.primary_service_area_code %></td>
+          <td class="px-6 py-4"><%= ticket.additional_service_area_codes %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="flex justify-end">
+    <%= paginate @tickets %>
+  </div>
+</div>
